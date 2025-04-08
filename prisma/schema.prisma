@@ -12,3 +12,101 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model Customer{
+  id String @id @default(uuid()) @db.Uuid
+  firstName String? @map("first_name")
+  lastName String? @map("last_name")
+  email String?
+  phone String?
+  address String?
+  quotations Quotation[]
+  @@map("customers")
+
+  }
+
+  model Quotation{
+    id Int @id @default(autoincrement())
+    customerId String @db.Uuid
+    createdAt DateTime @default(now())
+    status String @default("Pending")
+    customer Customer @relation(fields: [customerId],references: [id])
+
+    quotationStones QuotationStone[]
+    quotationCutout QuotationCutout[]
+      @@map("qoutations")
+
+  }
+  model Stone{
+    id Int @id @default(autoincrement())
+    name String
+    image String @map("image_url")
+    description String
+    width Int @map("width_mm") //in mm
+    length Int @map("length_mm") //in mm
+thickness Int  @map("thickness_mm")//in mm
+price Float
+availability String @default("Available")
+
+quotationStone QuotationStone[]
+      @@map("stones")
+
+  }
+  model StonePolish{
+    id Int @id @default(autoincrement())
+    name String
+    pricePerMeter Float @map("price_per_meter")
+    iamge String? @map("image_url")
+    description String?
+
+    quotationStones QuotationStone[]
+    @@map("stone_polishes")
+  }
+  model QuotationStone{
+    id Int @id @default(autoincrement())
+    quotationId Int @map("quotation_id")
+    stonePolishId Int @map("stone_polish_id")
+    stoneId Int @map("stone_id")
+    width Int @map("width_mm") //in mm
+    length Int @map("length_mm") // in mm
+
+    quotation Quotation @relation(fields: [quotationId],references: [id],onDelete: Cascade)
+    stonePolish StonePolish @relation(fields: [stonePolishId],references: [id])
+    stone Stone @relation(fields: [stoneId],references: [id])
+    @@map("quotation_stones")
+  }
+  model Cutout{
+id Int @id @default(autoincrement())
+name String
+pricePerMeter Float @map("price_per_meter")
+image String? @map("image_url")
+description String?
+
+quotationCutout QuotationCutout[]
+    @@map("cutouts")
+  }
+
+model QuotationCutout{
+id Int @id @default(autoincrement())
+quotationId Int @map("quotation_id")
+cutoutId Int @map("cutout_id")
+width Int @map("width_mm") //in mm
+length Int @map("length_mm") //in mm
+totalPrice Float @map("total_price")
+
+quotation Quotation @relation(fields: [quotationId],references: [id])
+cutout Cutout @relation(fields: [cutoutId],references: [id])
+
+@@map("quotation_cutouts")
+}
+
+model ContactUs{
+id Int @id @default(autoincrement())
+name String?
+email String?
+phone String
+message String?
+createdAt DateTime @map("created_at")
+status String @default("Pending")
+  @@map("contact_us")
+}
