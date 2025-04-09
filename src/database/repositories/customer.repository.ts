@@ -1,12 +1,13 @@
 import prisma from "../prisma/prismaClient";
 import { Customer } from "../models/Customer.model";
+import { handleError } from "@/utils/errorHandler";
 
 export const CustomerRepository = {
   async getAll(): Promise<Customer[]> {
     try {
       return await prisma.customer.findMany();
     } catch (error) {
-      console.error("Error fetching all customers:", error);
+      handleError(error, "Error fetching all customers");
       throw new Error("Unable to fetch customers");
     }
   },
@@ -17,7 +18,7 @@ export const CustomerRepository = {
         where: { id },
       });
     } catch (error) {
-      console.error(`Error fetching customer with ID ${id}:`, error);
+      handleError(error, `Error fetching customer with ID ${id}`);
       throw new Error(`Unable to fetch customer with ID ${id}`);
     }
   },
@@ -26,7 +27,7 @@ export const CustomerRepository = {
     try {
       return await prisma.customer.create({ data });
     } catch (error) {
-      console.error("Error creating new customer:", error);
+      handleError(error, `Error creating new customer`);
       throw new Error("Unable to create new customer");
     }
   },
