@@ -20,21 +20,24 @@ model Customer{
   email String?
   phone String?
   address String?
+  createdAt DateTime @map("created_at")
+
   quotations Quotation[]
   @@map("customers")
-
   }
 
   model Quotation{
     id Int @id @default(autoincrement())
-    customerId String @db.Uuid
-    createdAt DateTime @default(now())
+    customerId String @db.Uuid @map("customer_id")
+    createdAt DateTime @map("created_at") @default(now())
     status String @default("Pending")
-    customer Customer @relation(fields: [customerId],references: [id])
+    finalPrice Float @map("final_price")
 
+
+    customer Customer @relation(fields: [customerId],references: [id])
     quotationStones QuotationStone[]
     quotationCutout QuotationCutout[]
-      @@map("qoutations")
+      @@map("quotations")
 
   }
   model Stone{
@@ -65,14 +68,16 @@ quotationStone QuotationStone[]
   model QuotationStone{
     id Int @id @default(autoincrement())
     quotationId Int @map("quotation_id")
-    stonePolishId Int @map("stone_polish_id")
-    stoneId Int @map("stone_id")
+    stonePolishId Int @map("stone_polish_id") @default(0000)
+    stoneId Int @map("stone_id") @default(0000)
     width Int @map("width_mm") //in mm
     length Int @map("length_mm") // in mm
+    stoneName String @map("stone_name")
+    polishName String @map("polish_name")
 
     quotation Quotation @relation(fields: [quotationId],references: [id],onDelete: Cascade)
-    stonePolish StonePolish @relation(fields: [stonePolishId],references: [id])
-    stone Stone @relation(fields: [stoneId],references: [id])
+    stonePolish StonePolish @relation(fields: [stonePolishId],references: [id],onDelete: SetDefault)
+    stone Stone @relation(fields: [stoneId],references: [id],onDelete: SetDefault)
     @@map("quotation_stones")
   }
   model Cutout{
