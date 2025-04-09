@@ -5,4 +5,5 @@ export interface Customer {
   email?: string | null;
   phone?: string | null;
   address?: string | null;
+  createdAt: Date;
 }
