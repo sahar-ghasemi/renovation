@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "/" },
@@ -30,7 +31,7 @@ const Navbar = () => {
       initial={{ x: +1000 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.5 }}
-      className={`w-full z-50 sticky top-0 transition-all duration-300 ${
+      className={`w-full z-50 sticky top-0 transition-all duration-300 px-2 ${
         scrolled ? "bg-white/70 backdrop-blur shadow-md" : "bg-transparent"
       }`}
     >
@@ -61,23 +62,23 @@ const Navbar = () => {
 
         {/* دکمه دسکتاپ */}
         <div className="hidden md:block">
-          <Link href="#stone-menu">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              animate={{
-                scale: [1, 1.05, 1],
-                boxShadow: [
-                  "0 0 0px #e5e5e5",
-                  "0 0 8px #e5e5e5",
-                  "0 0 0px #e5e5e5",
-                ],
-              }}
-              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-green text-white px-4 py-1 rounded-md font-bold shadow hover:text-white/90 hover:cursor-pointer"
-            >
-              Find total cost?
-            </motion.button>
-          </Link>
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            animate={{
+              scale: [1, 1.05, 1],
+              boxShadow: [
+                "0 0 0px #FFD700",
+                "0 0 8px #FF7F50",
+                "0 0 0px #FFD700",
+              ],
+            }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            className="group inline-flex items-center px-5 py-3 rounded-r-full text-sm font-semibold text-white bg-gradient-to-br 
+            from-[#FF7F50] to-[#FFD700] shadow-lg hover:from-[#FFD700] hover:to-[#FF7F50] hover:cursor-pointer"
+          >
+            <span className="mr-2">Start Estimating</span>
+            <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+          </motion.button>
         </div>
 
         {/* آیکون موبایل */}
@@ -85,7 +86,7 @@ const Navbar = () => {
           className="md:hidden cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className="text-green font-bold text-2xl">☰</span>
+          <span className="text-green font-bold text-3xl">☰</span>
         </div>
       </div>
 
@@ -104,7 +105,7 @@ const Navbar = () => {
                 <li key={href}>
                   <Link
                     href={href}
-                    onClick={() => setMenuOpen(false)} // 👈 بستن منو با کلیک
+                    onClick={() => setMenuOpen(false)}
                     className={`transition-colors duration-300 ${
                       isActive
                         ? "text-orange"
@@ -119,7 +120,7 @@ const Navbar = () => {
           </ul>
 
           {/* تصویر کنار منو */}
-          <div className="w-full sm:w-1/2">
+          <div className="w-full sm:w-1/2 px-4">
             <Image
               src="/assets/images/mobile-menu.jpg" // مسیر تصویر رو با فایل واقعی‌ت عوض کن
               alt="Menu Illustration"

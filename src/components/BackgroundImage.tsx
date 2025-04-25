@@ -5,7 +5,7 @@ export default function BackgroundImage() {
   return (
     <div className="">
       <Image
-        src="/assets/images/stone-bg.jpg"
+        src="/assets/images/stone-bg1.jpg"
         alt="Kitchen Background"
         fill
         priority

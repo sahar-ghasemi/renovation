@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section className="relative h-[80vh] w-full overflow-hidden">
       <Image
-        src="/assets/images/kitchen11.jpg"
+        src="/assets/images/kitchen12.jpg"
         alt="Kitchen Background"
         fill
         priority
