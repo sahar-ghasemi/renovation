@@ -5,11 +5,16 @@
   --color-background: #f9f9f6;
   --color-gray: #e5e5e5;
   --color-dark: #2d2d2d;
-  --color-green: #3c5b48;
+  --color-green: #2b6956;
   --color-olive: #6b7c6e;
   --color-gold: #c2a15e;
   --color-clay: #d68a59;
   --color-sand: #d7cbb5;
+  --color-orange: #dd7e34;
+  --color-extra-light-orange: #f7f4ed;
+  --color-light-orange: #fdedde;
+  --color-dark-orange: #dd7e34;
+  --color-green: #007e57;
 
   --font-display: Inter, sans-serif;
 }
