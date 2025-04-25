@@ -34,9 +34,9 @@ const Navbar = () => {
         scrolled ? "bg-white/70 backdrop-blur shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-2 py-4 flex items-center justify-between">
         {/* لوگو */}
-        <div className="text-clay text-xl font-bold tracking-wide">
+        <div className="text-green text-3xl font-bold tracking-wide">
           Crazy Stone
         </div>
 
@@ -49,7 +49,7 @@ const Navbar = () => {
                 <Link
                   href={href}
                   className={`transition-colors duration-300 ${
-                    isActive ? "text-clay" : "text-gray-700 hover:text-green"
+                    isActive ? "text-orange" : "text-gray-700 hover:text-green"
                   }`}
                 >
                   {label}
@@ -67,13 +67,13 @@ const Navbar = () => {
               animate={{
                 scale: [1, 1.05, 1],
                 boxShadow: [
-                  "0 0 0px #fdefe6",
-                  "0 0 8px #fdefe6",
-                  "0 0 0px #fdefe6",
+                  "0 0 0px #e5e5e5",
+                  "0 0 8px #e5e5e5",
+                  "0 0 0px #e5e5e5",
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="bg-light-orange text-[#90634D] px-4 py-1 rounded-md font-bold shadow hover:text-[#90634D]/90 hover:cursor-pointer"
+              className="bg-green text-white px-4 py-1 rounded-md font-bold shadow hover:text-white/90 hover:cursor-pointer"
             >
               Find total cost?
             </motion.button>
