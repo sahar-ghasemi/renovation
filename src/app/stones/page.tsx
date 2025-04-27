@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 
 const stones: Stone[] = [
   {
+    id: 1,
     name: "Granite Black",
     images: [
       "/assets/images/stone1-1.jpg",
@@ -14,6 +15,7 @@ const stones: Stone[] = [
     ],
   },
   {
+    id: 2,
     name: "Marble White",
     images: [
       "/assets/images/stone2-1.jpg",
@@ -22,10 +24,12 @@ const stones: Stone[] = [
     ],
   },
   {
+    id: 3,
     name: "Travertine Classic",
     images: ["/assets/images/stone3-1.jpg", "/assets/images/stone3-2.jpg"],
   },
   {
+    id: 4,
     name: "Onyx Gold",
     images: [
       "/assets/images/stone4-1.jpg",
@@ -34,6 +38,7 @@ const stones: Stone[] = [
     ],
   },
   {
+    id: 5,
     name: "Limestone Grey",
     images: ["/assets/images/stone5-1.jpg", "/assets/images/stone5-2.jpg"],
   },

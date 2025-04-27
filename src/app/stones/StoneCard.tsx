@@ -5,8 +5,10 @@ import SwiperCore from "swiper";
 import "swiper/css";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export interface Stone {
+  id: number;
   name: string;
   images: string[];
 }
@@ -15,9 +17,10 @@ export default function StoneCard({ stone }: { stone: Stone }) {
   const swiperRef = useRef<SwiperCore | null>(null);
 
   return (
-    <div
-      className="relative group bg-white/60 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200
-     overflow-hidden flex flex-col items-center transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.25)]"
+    <Link
+      href={`/stones/${stone.id}`}
+      className="relative group bg-white/60 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 overflow-hidden flex flex-col items-center transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_8px_32px_0_rgba(31,38,135,0.25)] focus:outline-none focus:ring-2 focus:ring-orange-400"
+      style={{ textDecoration: "none" }}
     >
       <div className="w-full aspect-square relative">
         <Swiper
@@ -48,7 +51,10 @@ export default function StoneCard({ stone }: { stone: Stone }) {
             className="absolute  border-none hover:cursor-pointer left-3 top-1/2 -translate-y-1/2 z-10 p-0.5 rounded-full bg-gradient-to-br
              from-orange-400/80 to-yellow-300/80 shadow-lg border border-white/60 backdrop-blur-md opacity-0
               group-hover:opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-xl w-7 h-7 flex items-center justify-center"
-            onClick={() => swiperRef.current?.slidePrev()}
+            onClick={(e) => {
+              e.preventDefault();
+              swiperRef.current?.slidePrev();
+            }}
             tabIndex={-1}
             aria-label="Previous image"
           >
@@ -59,7 +65,10 @@ export default function StoneCard({ stone }: { stone: Stone }) {
         {stone.images.length > 1 && (
           <button
             className="absolute border-none hover:cursor-pointer right-3 top-1/2 -translate-y-1/2 z-10 p-0.5 rounded-full bg-gradient-to-br from-orange-400/80 to-yellow-300/80 shadow-lg border border-white/60 backdrop-blur-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 hover:shadow-xl w-7 h-7 flex items-center justify-center"
-            onClick={() => swiperRef.current?.slideNext()}
+            onClick={(e) => {
+              e.preventDefault();
+              swiperRef.current?.slideNext();
+            }}
             tabIndex={-1}
             aria-label="Next image"
           >
@@ -73,6 +82,6 @@ export default function StoneCard({ stone }: { stone: Stone }) {
           {stone.name}
         </span>
       </div>
-    </div>
+    </Link>
   );
 }
