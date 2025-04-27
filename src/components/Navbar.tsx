@@ -10,7 +10,7 @@ import { ArrowRight } from "lucide-react";
 const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Stone", href: "/stone" },
+  { label: "Stones", href: "/stones" },
   { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
