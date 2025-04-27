@@ -122,7 +122,7 @@ const Navbar = () => {
           {/* تصویر کنار منو */}
           <div className="w-full sm:w-1/2 px-4">
             <Image
-              src="/assets/images/mobile-menu.jpg" // مسیر تصویر رو با فایل واقعی‌ت عوض کن
+              src="/assets/images/mobile-menu.jpg"
               alt="Menu Illustration"
               className="w-full h-auto object-cover rounded-xl shadow-md"
               width={400}
