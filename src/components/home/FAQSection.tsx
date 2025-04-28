@@ -1,0 +1,165 @@
+"use client";
+import React from "react";
+import * as Accordion from "@radix-ui/react-accordion";
+import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
+const faqData = [
+  {
+    question: "What types of renovation and remodeling services do you offer?",
+    answer:
+      "We offer a wide range of renovation and remodeling services, including complete building renovation, kitchen remodeling, bathroom renovation, room renovations, and exterior space modernization. Each project is designed and executed according to your specific needs.",
+  },
+  {
+    question: "How long do renovation projects typically take?",
+    answer:
+      "Project duration depends on the type and scope of work. Smaller projects like bathroom renovations may take 2-3 weeks, while larger projects like complete home renovations may require 2-3 months. We always strive to minimize disruption to your daily life through careful planning.",
+  },
+  {
+    question: "Do you provide warranties for completed work?",
+    answer:
+      "Yes, we provide warranties for all our services. The warranty period varies depending on the type of work but typically ranges from 1 to 5 years. Warranty details are clearly specified in the contract.",
+  },
+  {
+    question: "How can I estimate my project budget?",
+    answer:
+      "We have an online estimator tool on our website that helps you get an initial cost estimate. You can also contact our team for a free consultation to get a more accurate cost assessment.",
+  },
+  {
+    question: "Can I stay in my home during the renovation?",
+    answer:
+      "This depends on the type and scope of the project. For smaller projects, you can usually stay in your home. However, for larger projects, you may need to temporarily relocate. We'll consult with you and suggest appropriate solutions.",
+  },
+  {
+    question: "How can I ensure the quality of your work?",
+    answer:
+      "We are licensed professionals with an expert team. You can view our previous work samples and speak with our past clients. Additionally, we provide regular progress reports throughout the project, allowing you to verify the quality at every stage.",
+  },
+];
+
+const FAQSection: React.FC = () => {
+  return (
+    <section className="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row">
+      {/* FAQ Section */}
+      <div className="w-full lg:w-2/3">
+        <div className="mb-4">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            Frequently Asked Questions
+          </h2>
+          <p className="text-lg text-gray-600">
+            Answers to common questions about our renovation and remodeling
+            services
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+            delay: 0.4,
+          }}
+        >
+          <Accordion.Root
+            type="single"
+            collapsible
+            className="w-full space-y-4"
+          >
+            {faqData.map((item, index) => (
+              <Accordion.Item
+                key={index}
+                value={`item-${index}`}
+                className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-gray-200 transition-colors"
+              >
+                <Accordion.Header>
+                  <Accordion.Trigger className="group flex w-full items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                    <motion.span
+                      className="text-lg font-semibold text-gray-800"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        ease: [0.16, 1, 0.3, 1],
+                        delay: 0.1 * index,
+                      }}
+                    >
+                      {item.question}
+                    </motion.span>
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.6,
+                        ease: [0.16, 1, 0.3, 1],
+                        delay: 0.1 * index,
+                      }}
+                    >
+                      <ChevronDown
+                        className="h-5 w-5 text-gray-500 transition-transform duration-300 group-data-[state=open]:rotate-180"
+                        aria-hidden
+                      />
+                    </motion.div>
+                  </Accordion.Trigger>
+                </Accordion.Header>
+                <Accordion.Content className="overflow-hidden">
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{
+                      duration: 0.3,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="p-6 text-gray-600 border-t border-gray-100"
+                  >
+                    {item.answer}
+                  </motion.div>
+                </Accordion.Content>
+              </Accordion.Item>
+            ))}
+          </Accordion.Root>
+        </motion.div>
+      </div>
+
+      {/* Image Section */}
+      <div className="w-full lg:w-1/3 mt-8 lg:mt-0 lg:pl-8 flex items-center justify-center relative">
+        {/* تصویر پس‌زمینه */}
+        <motion.div
+          style={{
+            backgroundImage: "url(/assets/images/back.svg)", // تصویر کمرنگ‌تر
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="absolute top-0 left-0 w-full h-full rounded-t-full rounded-br-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+            delay: 0.4,
+          }}
+        />
+
+        {/* تصویر اصلی */}
+        <motion.div
+          style={{
+            backgroundImage: "url(/assets/images/kitchen8.jpg)", // مسیر تصویر اصلی
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className="relative w-96 h-96 rounded-t-full rounded-br-full shadow-lg border-2 border-light-orange"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.16, 1, 0.3, 1],
+            delay: 0.4,
+          }}
+        />
+      </div>
+    </section>
+  );
+};
+
+export default FAQSection;

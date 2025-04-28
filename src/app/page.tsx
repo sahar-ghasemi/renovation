@@ -1,6 +1,7 @@
 import {
   CustomerReviews,
   EstimatorSection,
+  FAQSection,
   Hero,
   Services,
 } from "@/components/home";
@@ -12,6 +13,7 @@ export default function Home() {
       <Services />
       <EstimatorSection />
       <CustomerReviews />
+      <FAQSection />
     </>
   );
 }
