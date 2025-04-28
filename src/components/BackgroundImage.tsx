@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function BackgroundImage() {
   return (
-    <div className="">
+    <div>
       <Image
-        src="/assets/images/stone-bg1.jpg"
+        src="/assets/images/card-background.jpg"
         alt="Kitchen Background"
         fill
         priority

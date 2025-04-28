@@ -39,7 +39,7 @@ const faqData = [
 
 const FAQSection: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50 px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row">
+    <section className="py-16 bg-ivory px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row">
       {/* FAQ Section */}
       <div className="w-full lg:w-2/3">
         <div className="mb-4">
@@ -73,7 +73,7 @@ const FAQSection: React.FC = () => {
                 className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-gray-200 transition-colors"
               >
                 <Accordion.Header>
-                  <Accordion.Trigger className="group flex w-full items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors">
+                  <Accordion.Trigger className="group flex w-full items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors">
                     <motion.span
                       className="text-lg font-semibold text-gray-800"
                       initial={{ opacity: 0, y: 20 }}
@@ -148,7 +148,7 @@ const FAQSection: React.FC = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="relative w-96 h-96 rounded-t-full rounded-br-full shadow-lg border-2 border-light-orange"
+          className="relative w-96 h-96 rounded-t-full rounded-br-full shadow-lg border-5 border-stone-beige"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{

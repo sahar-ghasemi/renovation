@@ -7,7 +7,8 @@ export default function EstimatorSection() {
   return (
     <section
       className="w-full min-h-screen flex flex-col-reverse lg:flex-row items-center
-     justify-center gap-12 lg:gap-20 px-6 lg:px-20 py-16 bg-background"
+     justify-center gap-12 lg:gap-20 px-6 lg:px-20 py-16  bg-gradient-to-br 
+          from-white to-[#efe8df]"
     >
       {/* Left - Text Content */}
       <motion.div
@@ -17,7 +18,7 @@ export default function EstimatorSection() {
         viewport={{ once: true }}
         className="w-full lg:w-1/2 text-center lg:text-left"
       >
-        <h2 className="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4 leading-snug">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-warm-gray mb-4 leading-snug">
           Instantly Estimate Your <br />
           <span className="text-orange">Stone Renovation Cost</span>
         </h2>
@@ -29,7 +30,7 @@ export default function EstimatorSection() {
 
         <button
           className="group inline-flex items-center px-5 py-3 rounded-r-full text-sm font-semibold text-white bg-gradient-to-br 
-          from-[#FF7F50] to-[#FFD700] shadow-lg hover:from-[#FFD700] hover:to-[#FF7F50] shadow-lg hover:cursor-pointer "
+          from-orange to-gold  hover:from-gold hover:to-orange shadow-lg hover:cursor-pointer "
         >
           <span className="mr-2">Start Estimating</span>
           <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />

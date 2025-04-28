@@ -4,43 +4,54 @@ import { FreeMode, EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/effect-coverflow";
+import Image from "next/image";
 
 const reviews = [
   {
     id: 1,
     name: "Sarah Johnson",
-    comment: "Professional and high-quality work. Love my kitchen countertop!",
+    comment:
+      "Bit slow, but worth the wait. Beautiful result.Top-notch service from beginning to end Professional and high-quality work. Love my kitchen countertop!",
     date: "2024/03/05",
     projectType: "Kitchen Countertop",
+    avatar: "/assets/images/avatar1.jpg",
   },
 
   {
     id: 2,
     name: "Michael Brown",
-    comment: "The living room looks stunning now. Great craftsmanship!",
+    comment:
+      "Top-notch service from beginning to end.Professional and high-quality work.Bit slow, but worth the wait. Beautiful result.Top-notch service from beginning to end Love my kitchen countertop!The living room looks stunning now. Great craftsmanship!",
     date: "2024/02/10",
     projectType: "Living Room Stone",
+    avatar: "/assets/images/avatar1.jpg",
   },
   {
     id: 3,
     name: "Emily Davis",
-    comment: "Bit slow, but worth the wait. Beautiful result.",
+    comment:
+      "Bit slow, but worth the wait. Beautiful result.Top-notch service from beginning to end.Professional and high-quality work. Love my kitchen countertop!",
     date: "2024/01/25",
     projectType: "Bathroom Vanity",
+    avatar: "/assets/images/avatar1.jpg",
   },
   {
     id: 4,
     name: "David Wilson",
-    comment: "Top-notch service from beginning to end.",
+    comment:
+      "Top-notch service from beginning to end.Professional and high-quality work. Love my kitchen countertop!Top-notch service from beginning to end.Professional and high-quality work. Love my kitchen countertop!",
     date: "2024/03/15",
     projectType: "Fireplace Surround",
+    avatar: "/assets/images/avatar1.jpg",
   },
   {
     id: 5,
     name: "Sarah Johnson",
-    comment: "Professional and high-quality work. Love my kitchen countertop!",
+    comment:
+      "Professional and high-quality work. Love my kitchen countProfessional and high-quality work. Love my kitchen countertop!Professional and high-quality work. Love my kitchen countertop!ertop!",
     date: "2024/03/05",
     projectType: "Kitchen Countertop",
+    avatar: "/assets/images/avatar1.jpg",
   },
 ];
 
@@ -105,16 +116,24 @@ export default function CustomerReviews() {
                 }}
               >
                 <div className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-white">
-                    {review.name.charAt(0)}
-                  </span>
+                  {review.avatar ? (
+                    <Image
+                      src={review.avatar}
+                      alt={review.name}
+                      className="w-full h-full rounded-full object-cover"
+                      width={80}
+                      height={80}
+                    />
+                  ) : (
+                    <span className="text-2xl font-bold text-white">
+                      {review.name.charAt(0)}
+                    </span>
+                  )}
                 </div>
                 <h3 className="text-lg font-bold text-gray-800">
                   {review.name}
                 </h3>
-                <p className="text-sm text-orange/80 mb-2">
-                  {review.projectType}
-                </p>
+                <p className="text-sm text-orange mb-2">{review.projectType}</p>
                 <p className="text-gray-600 italic mb-3">
                   &ldquo;{review.comment}&rdquo;
                 </p>

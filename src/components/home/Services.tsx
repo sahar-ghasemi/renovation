@@ -46,13 +46,13 @@ export default function ServicesSection() {
                 ease: "easeInOut",
               }}
               viewport={{ once: true }}
-              className="relative group p-6 rounded-3xl bg-white/15 border border-white/20 shadow-xl   "
+              className="relative group p-6 rounded-3xl bg-white/15 border border-white/20 shadow-xl"
             >
               {/* Backdrop Blur for each card */}
               <div className="absolute inset-0 z-0  backdrop-blur-sm rounded-3xl"></div>
 
               <div
-                className="absolute -top-6 left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-[#FF7F50] to-[#FFD700] rounded-full flex items-center
+                className="absolute -top-6 left-1/2 -translate-x-1/2 w-16 h-16 bg-gradient-to-br from-orange to-gold rounded-full flex items-center
                justify-center shadow-md group-hover:scale-110 "
               >
                 <div className="bg-white rounded-full p-3">{service.icon}</div>

@@ -67,14 +67,14 @@ const Navbar = () => {
             animate={{
               scale: [1, 1.05, 1],
               boxShadow: [
-                "0 0 0px #FFD700",
-                "0 0 8px #FF7F50",
-                "0 0 0px #FFD700",
+                "0 0 0px #cc5500",
+                "0 0 8px #d4af37",
+                "0 0 0px #cc5500",
               ],
             }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             className="group inline-flex items-center px-5 py-3 rounded-r-full text-sm font-semibold text-white bg-gradient-to-br 
-            from-[#FF7F50] to-[#FFD700] shadow-lg hover:from-[#FFD700] hover:to-[#FF7F50] hover:cursor-pointer"
+            from-orange to-gold shadow-lg hover:from-gold hover:to-orange hover:cursor-pointer"
           >
             <span className="mr-2">Start Estimating</span>
             <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
