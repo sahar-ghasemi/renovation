@@ -37,8 +37,8 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-2 py-4 flex items-center justify-between">
         {/* لوگو */}
-        <div className="text-green text-3xl font-bold tracking-wide">
-          Crazy Stone
+        <div className="text-orange text-3xl font-bold tracking-wide">
+          Crazy <span className="text-[#1c1c1c]">Stone</span>
         </div>
 
         {/* منوی دسکتاپ */}
@@ -50,7 +50,7 @@ const Navbar = () => {
                 <Link
                   href={href}
                   className={`transition-colors duration-300 ${
-                    isActive ? "text-orange" : "text-gray-700 hover:text-green"
+                    isActive ? "text-orange" : "text-gray-700 hover:text-orange"
                   }`}
                 >
                   {label}
@@ -86,7 +86,7 @@ const Navbar = () => {
           className="md:hidden cursor-pointer"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <span className="text-green font-bold text-3xl">☰</span>
+          <span className="text-warm-gray font-bold text-3xl">☰</span>
         </div>
       </div>
 
@@ -109,7 +109,7 @@ const Navbar = () => {
                     className={`transition-colors duration-300 ${
                       isActive
                         ? "text-orange"
-                        : "text-gray-700 hover:text-green"
+                        : "text-gray-700 hover:text-orange"
                     }`}
                   >
                     {label}

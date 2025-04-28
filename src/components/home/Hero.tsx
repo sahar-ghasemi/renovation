@@ -22,8 +22,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          Elevate Your Home <br className="hidden md:block" /> With Timeless
-          Stone Design
+          <span className="text-[#f5f0e1]">Elevate Your Home</span>{" "}
+          <br className="hidden md:block" /> With Timeless Stone Design
         </motion.h1>
 
         <motion.p
@@ -42,7 +42,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.6, duration: 1 }}
         >
-          <button className="bg-green/90 text-black px-6 py-3 rounded-md font-semibold hover:bg-green transition cursor-pointer">
+          <button className="bg-gold/90 text-black px-6 py-3 rounded-md font-semibold hover:bg-gold transition cursor-pointer">
             Get a Free Quote
           </button>
           <button className="border border-white text-white px-6 py-3 rounded-md font-semibold hover:bg-orange hover:border-none hover:text-black transition cursor-pointer">
