@@ -5,6 +5,7 @@ import {
   Hero,
   Services,
 } from "@/components/home";
+import DiscountSection from "@/components/home/DiscountSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <EstimatorSection />
       <CustomerReviews />
       <FAQSection />
+      <DiscountSection />
     </>
   );
 }
