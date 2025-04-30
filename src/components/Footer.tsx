@@ -51,7 +51,12 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-ivory text-[#0a0a0a]">
+    <footer className="bg-ivory text-[#0a0a0a] relative overflow-hidden">
+      {/* Modern Background Elements */}
+      <div className="absolute -bottom-160 -left-90 w-250 h-250 bg-gradient-to-br from-orange/40 to-orange/10 rounded-full opacity-30 z-0 blur-[100px]"></div>
+      <div className="absolute -bottom-140 -left-70 w-200 h-200 bg-gradient-to-br from-orange/20 to-orange/5 rounded-full opacity-20 z-0 blur-[80px]"></div>
+      <div className="absolute -bottom-120 -left-50 w-150 h-150 bg-gradient-to-br from-orange/10 to-orange/0 rounded-full opacity-15 z-0 blur-[60px]"></div>
+
       <div className="container mx-auto px-4 py-16">
         <motion.div
           variants={containerVariants}
