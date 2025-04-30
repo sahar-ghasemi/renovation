@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Facebook,
@@ -13,7 +13,12 @@ import {
 import Link from "next/link";
 
 const Footer: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
   const currentYear = new Date().getFullYear();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -50,8 +55,17 @@ const Footer: React.FC = () => {
     },
   };
 
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <footer className="bg-ivory text-[#0a0a0a]">
+    <footer className="bg-ivory text-[#0a0a0a] relative overflow-hidden">
+      {/* Modern Background Elements */}
+      <div className="absolute -bottom-160 -left-90 w-250 h-250 bg-gradient-to-br from-orange/40 to-orange/10 rounded-full opacity-30 z-0 blur-[100px]"></div>
+      <div className="absolute -bottom-140 -left-70 w-200 h-200 bg-gradient-to-br from-orange/20 to-orange/5 rounded-full opacity-20 z-0 blur-[80px]"></div>
+      <div className="absolute -bottom-120 -left-50 w-150 h-150 bg-gradient-to-br from-orange/10 to-orange/0 rounded-full opacity-15 z-0 blur-[60px]"></div>
+
       <div className="container mx-auto px-4 py-16">
         <motion.div
           variants={containerVariants}
@@ -94,7 +108,7 @@ const Footer: React.FC = () => {
                 >
                   <Link
                     href={social.href}
-                    className="p-3 rounded-full bg-white/80 shadow-lg hover:shadow-[#d4af37]/20 transition-all duration-300 flex items-center justify-center w-12 h-12"
+                    className="p-3 rounded-full bg-white/80 shadow-lg hover:shadow-orange/20 transition-all duration-300 flex items-center justify-center w-12 h-12"
                   >
                     <social.icon
                       size={20}
@@ -219,7 +233,7 @@ const Footer: React.FC = () => {
                   whileHover={{ x: 5 }}
                 >
                   <motion.div
-                    className="p-3 rounded-full bg-white/80 shadow-lg group-hover:shadow-[#d4af37]/20 transition-all duration-300"
+                    className="p-3 rounded-full bg-white/80 shadow-lg group-hover:shadow-orange/20 transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                   >
                     <contact.icon
