@@ -21,7 +21,7 @@ const Topbar = () => {
   return (
     <div
       className={`transition-all duration-500 text-sm text-black
-        px-4 py-2 bg-orange border-b border-gold font-medium flex justify-between items-center
+        px-4 py-2 bg-dark-beige border-none font-medium flex justify-between items-center
         ${isVisible ? "opacity-100" : "opacity-0"}`}
     >
       {/* »ثبف side: Promotional text */}
