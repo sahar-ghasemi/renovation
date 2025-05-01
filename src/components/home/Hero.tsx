@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen bg-light-background overflow-hidden">
+    <section className="relative  bg-light-background overflow-hidden">
       {/* Main Content */}
       <div className="relative max-w-screen mx-auto py-10 h-full">
         <div className="relative h-full min-h-[500px]">
