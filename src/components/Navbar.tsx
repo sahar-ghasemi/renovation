@@ -28,12 +28,14 @@ const Navbar = () => {
   return (
     <nav
       className={`w-full z-50 sticky top-0 transition-all duration-300 px-2 ${
-        scrolled ? "bg-background/70 backdrop-blur shadow-md" : "bg-background"
+        scrolled
+          ? "bg-light-background/70 backdrop-blur shadow-md"
+          : "bg-light-background"
       }`}
     >
       <div className="max-w-7xl mx-auto px-2 py-4 flex items-center justify-between">
         <div className="text-back text-3xl font-bold tracking-wide">
-          Crazy Stone
+          Maison Stone
         </div>
 
         <ul className="hidden md:flex gap-6 text-md font-medium justify-center flex-1">

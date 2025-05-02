@@ -42,7 +42,7 @@ const DiscountSection = () => {
         />
         <button
           type="submit"
-          className="bg-orange p-2 rounded-md text-white hover:bg-light-oran"
+          className="bg-[#a86442] p-2 rounded-md text-white hover:bg-light-oran"
         >
           Subscribe
         </button>
