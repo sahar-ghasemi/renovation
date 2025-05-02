@@ -39,17 +39,20 @@ const faqData = [
 
 const FAQSection: React.FC = () => {
   return (
-    <section className="py-16 bg-ivory px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row">
+    <section className="py-16 bg-ivory px-4 sm:px-6 lg:px-8 relative min-h-[800px]">
       {/* FAQ Section */}
       <div className="w-full lg:w-2/3">
         <div className="mb-4">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-lg text-gray-600">
-            Answers to common questions about our renovation and remodeling
-            services
-          </p>
+          <div className="relative">
+            <div className="absolute left-0 top-3 h-[60px] w-[4px] bg-brown rounded-tr-full rounded-br-full"></div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-neutral-800 mb-4 pl-8">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-lg text-neutral-600 pl-8">
+              Answers to common questions about our renovation and remodeling
+              services
+            </p>
+          </div>
         </div>
 
         <motion.div
@@ -70,10 +73,14 @@ const FAQSection: React.FC = () => {
               <Accordion.Item
                 key={index}
                 value={`item-${index}`}
-                className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 hover:border-gray-200 transition-colors"
+                className="bg-white rounded-xl rounded-br-[90px] shadow-sm  
+                overflow-hidden border border-beige/10 hover:border-beige/20 transition-colors"
               >
                 <Accordion.Header>
-                  <Accordion.Trigger className="group flex w-full items-center justify-between p-4 text-left hover:bg-gray-50 transition-colors">
+                  <Accordion.Trigger
+                    className="group flex w-full items-center justify-between p-4 
+                    text-left hover:bg-beige/50 data-[state=open]:bg-beige transition-colors"
+                  >
                     <motion.span
                       className="text-lg font-semibold text-gray-800"
                       initial={{ opacity: 0, y: 20 }}
@@ -123,32 +130,14 @@ const FAQSection: React.FC = () => {
       </div>
 
       {/* Image Section */}
-      <div className="w-full lg:w-1/3 mt-8 lg:mt-0 lg:pl-8 flex items-center justify-center relative">
-        {/* تصویر پس‌زمینه */}
+      <div className="fixed lg:absolute top-1/2 -translate-y-1/2 right-8 w-96 hidden lg:block">
         <motion.div
           style={{
-            backgroundImage: "url(/assets/images/back.svg)", // تصویر کمرنگ‌تر
+            backgroundImage: "url(/assets/images/kitchen8.jpg)",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
-          className="absolute top-0 left-0 w-full h-full rounded-t-full rounded-br-full"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.16, 1, 0.3, 1],
-            delay: 0.4,
-          }}
-        />
-
-        {/* تصویر اصلی */}
-        <motion.div
-          style={{
-            backgroundImage: "url(/assets/images/kitchen8.jpg)", // مسیر تصویر اصلی
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="relative w-96 h-96 rounded-t-full rounded-br-full shadow-lg border-5 border-stone-beige"
+          className="w-96 h-96 rounded-t-full rounded-br-full shadow-lg border-6 border-beige"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
