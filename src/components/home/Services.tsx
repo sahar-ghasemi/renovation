@@ -35,10 +35,10 @@ export default function ServicesSection() {
     <section className="relative py-2 bg-gray bg-light-background">
       <div className="mx-auto px-6 relative">
         <div className="flex items-center gap-4 mb-12">
-          <div className="w-1 h-12 bg-brown"></div>
+          <div className="w-1 h-12 bg-brown rounded-tr-full rounded-br-full"></div>
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold text-neutral-800">
-              What we offer
+              What we offer.
             </h2>
             <p className="text-sm text-neutral-600 mt-2">
               Discover our comprehensive renovation services
