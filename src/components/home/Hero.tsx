@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="relative h-full min-h-[500px]">
           {/* Text content - Above all */}
           <div className="absolute top-24 left-0 z-10 flex items-start">
-            <div className="w-[2px] h-[250px] bg-brown ml-[80px]" />
+            <div className="w-[2px] h-[250px] bg-brown ml-[80px] rounded-tr-full rounded-br-full"></div>
             <div className="ml-5 max-w-xl">
               <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
                 Premium Stone
