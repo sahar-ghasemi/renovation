@@ -14,8 +14,8 @@ export default function Home() {
       <Services />
       <EstimatorSection />
       <CustomerReview />
-      <DiscountSection />
       <FAQSection />
+      <DiscountSection />
     </>
   );
 }

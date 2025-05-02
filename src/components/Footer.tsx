@@ -11,6 +11,7 @@ import {
   MapPin,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   const [mounted, setMounted] = useState(false);
@@ -47,7 +48,6 @@ const Footer: React.FC = () => {
   const iconVariants = {
     hover: {
       scale: 1.1,
-      rotate: 360,
       transition: {
         type: "spring",
         stiffness: 300,
@@ -60,30 +60,29 @@ const Footer: React.FC = () => {
   }
 
   return (
-    <footer className="bg-ivory text-[#0a0a0a] relative overflow-hidden">
+    <footer className="bg-light-background text-[#0a0a0a] relative overflow-hidden">
       {/* Modern Background Elements */}
-      <div className="absolute -bottom-160 -left-90 w-250 h-250 bg-gradient-to-br from-orange/40 to-orange/10 rounded-full opacity-30 z-0 blur-[100px]"></div>
-      <div className="absolute -bottom-140 -left-70 w-200 h-200 bg-gradient-to-br from-orange/20 to-orange/5 rounded-full opacity-20 z-0 blur-[80px]"></div>
-      <div className="absolute -bottom-120 -left-50 w-150 h-150 bg-gradient-to-br from-orange/10 to-orange/0 rounded-full opacity-15 z-0 blur-[60px]"></div>
-
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-8">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
         >
           {/* Company Info */}
           <motion.div variants={itemVariants} className="space-y-6">
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gold to-orange"
-            >
-              Renovation Pro
-            </motion.h3>
+            <div className="flex items-center gap-4">
+              <div className="w-[4px] h-[30px] bg-brown rounded-tr-full rounded-br-full"></div>
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-3xl font-bold text-[#0a0a0a]"
+              >
+                Maison Stone
+              </motion.h3>
+            </div>
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -108,14 +107,14 @@ const Footer: React.FC = () => {
                 >
                   <Link
                     href={social.href}
-                    className="p-3 rounded-full bg-white/80 shadow-lg hover:shadow-orange/20 transition-all duration-300 flex items-center justify-center w-12 h-12"
+                    className="p-3 rounded-full bg-white/80 shadow-lg hover:shadow-brown/20 transition-all duration-300 flex items-center justify-center w-12 h-12"
                   >
                     <social.icon
                       size={20}
-                      className="text-orange group-hover:text-[#cc5500] group-hover:scale-110 transition-all duration-300"
+                      className="text-brown group-hover:text-brown/80 group-hover:scale-110 transition-all duration-300"
                     />
                     <motion.div
-                      className="absolute inset-0 rounded-full border-2 border-orange opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 rounded-full border-2 border-brown opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                       initial={{ scale: 0.8 }}
                       whileHover={{ scale: 1.1 }}
                     />
@@ -131,7 +130,7 @@ const Footer: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-xl font-semibold text-orange"
+              className="text-xl font-semibold text-brown"
             >
               Quick Links
             </motion.h3>
@@ -150,12 +149,8 @@ const Footer: React.FC = () => {
                 >
                   <Link
                     href={link.href}
-                    className="text-[#0a0a0a] hover:text-orange transition-colors flex items-center group"
+                    className="text-[#0a0a0a] hover:text-brown transition-colors group"
                   >
-                    <motion.span
-                      className="w-1.5 h-1.5 bg-orange rounded-full mr-2"
-                      whileHover={{ scale: 1.5 }}
-                    />
                     {link.text}
                   </Link>
                 </motion.li>
@@ -169,7 +164,7 @@ const Footer: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-xl font-semibold text-orange"
+              className="text-xl font-semibold text-brown"
             >
               Our Services
             </motion.h3>
@@ -188,12 +183,8 @@ const Footer: React.FC = () => {
                 >
                   <Link
                     href={service.href}
-                    className="text-[#0a0a0a] hover:text-orange transition-colors flex items-center group"
+                    className="text-[#0a0a0a] hover:text-brown transition-colors group"
                   >
-                    <motion.span
-                      className="w-1.5 h-1.5 bg-orange rounded-full mr-2"
-                      whileHover={{ scale: 1.5 }}
-                    />
                     {service.text}
                   </Link>
                 </motion.li>
@@ -207,7 +198,7 @@ const Footer: React.FC = () => {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
-              className="text-xl font-semibold text-orange"
+              className="text-xl font-semibold text-brown"
             >
               Contact Us
             </motion.h3>
@@ -233,15 +224,15 @@ const Footer: React.FC = () => {
                   whileHover={{ x: 5 }}
                 >
                   <motion.div
-                    className="p-3 rounded-full bg-white/80 shadow-lg group-hover:shadow-orange/20 transition-all duration-300"
+                    className="p-3 rounded-full bg-white/80 shadow-lg group-hover:shadow-brown/20 transition-all duration-300"
                     whileHover={{ scale: 1.1 }}
                   >
                     <contact.icon
                       size={18}
-                      className="text-orange group-hover:text-[#cc5500]"
+                      className="text-brown group-hover:text-brown/80"
                     />
                   </motion.div>
-                  <span className="text-[#0a0a0a] group-hover:text-orange transition-colors">
+                  <span className="text-[#0a0a0a] hover:text-brown transition-colors">
                     {contact.text}
                   </span>
                 </motion.li>
@@ -255,13 +246,19 @@ const Footer: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 pt-8 border-t border-white/20"
+          className="mt-16 border-t border-brown/20"
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <motion.p whileHover={{ scale: 1.02 }} className="text-[#0a0a0a]">
+          <div className="flex flex-col md:flex-row justify-between items-center py-3 md:py-2 gap-2">
+            <motion.p
+              whileHover={{ scale: 1.02 }}
+              className="text-[#0a0a0a] text-sm md:text-base"
+            >
               © {currentYear} Renovation Pro. All rights reserved.
             </motion.p>
-            <motion.div className="flex space-x-6" variants={containerVariants}>
+            <motion.div
+              className="flex flex-wrap justify-center gap-4"
+              variants={containerVariants}
+            >
               {[
                 { text: "Privacy Policy", href: "/privacy" },
                 { text: "Terms of Service", href: "/terms" },
@@ -274,7 +271,7 @@ const Footer: React.FC = () => {
                 >
                   <Link
                     href={link.href}
-                    className="text-[#0a0a0a] hover:text-orange transition-colors text-sm"
+                    className="text-[#0a0a0a] hover:text-brown transition-colors text-sm"
                   >
                     {link.text}
                   </Link>
