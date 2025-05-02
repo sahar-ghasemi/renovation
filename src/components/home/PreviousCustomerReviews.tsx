@@ -55,13 +55,22 @@ const reviews = [
   },
 ];
 
-export default function CustomerReviews() {
+export default function PreviousCustomerReviews() {
   return (
-    <section className="py-16 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 ">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8">
-          Customer Reviews
-        </h2>
+    <section className="py-16 bg-light-background w-full">
+      <div className="w-full mx-auto">
+        <div className="flex items-center justify-between px-4 mb-8">
+          <h2 className="text-3xl font-bold text-gray-800">
+            Our Customer Feedback.
+          </h2>
+          <Image
+            src="/assets/images/quote.png"
+            alt="quote"
+            width={60}
+            height={60}
+            className="w-10 h-10 mr-[20px] opacity-30"
+          />
+        </div>
 
         <Swiper
           modules={[FreeMode, EffectCoverflow]}
@@ -103,38 +112,41 @@ export default function CustomerReviews() {
             momentum: true,
             momentumRatio: 0.25,
           }}
-          className="py-4"
+          className="w-full"
         >
           {reviews.map((review) => (
-            <SwiperSlide key={review.id} className="swiper-slide-transform">
+            <SwiperSlide key={review.id} className="w-full">
               <div
-                className="relative h-[400px] bg-cover bg-center p-6 
-                rounded-tl-[50px] rounded-br-[50px]  flex flex-col items-center
-                 justify-center text-center transition-all duration-300"
-                style={{
-                  backgroundImage: "url('/assets/images/card-background.jpg')",
-                }}
+                className="relative bg-white p-6 
+                rounded-lg shadow-lg flex flex-col items-start
+                text-left transition-all duration-300"
               >
-                <div className="w-20 h-20 bg-orange rounded-full flex items-center justify-center mb-4">
-                  {review.avatar ? (
-                    <Image
-                      src={review.avatar}
-                      alt={review.name}
-                      className="w-full h-full rounded-full object-cover"
-                      width={80}
-                      height={80}
-                    />
-                  ) : (
-                    <span className="text-2xl font-bold text-white">
-                      {review.name.charAt(0)}
-                    </span>
-                  )}
+                <div className="flex items-center gap-4 mb-4 w-full">
+                  <div className="w-16 h-16 bg-brown rounded-full flex items-center justify-center overflow-hidden">
+                    {review.avatar ? (
+                      <Image
+                        src={review.avatar}
+                        alt={review.name}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span className="text-2xl font-bold text-white">
+                        {review.name.charAt(0)}
+                      </span>
+                    )}
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {review.name}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {review.projectType}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800">
-                  {review.name}
-                </h3>
-                <p className="text-sm text-orange mb-2">{review.projectType}</p>
-                <p className="text-gray-600 italic mb-3">
+                <p className="text-gray-700 italic mb-2">
                   &ldquo;{review.comment}&rdquo;
                 </p>
                 <span className="text-sm text-gray-400">{review.date}</span>
