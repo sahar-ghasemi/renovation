@@ -1,6 +1,7 @@
 "use client";
 import AboutHero from "./AboutHero";
 import AboutStory from "./AboutStory";
+import AboutValues from "./AboutValues";
 
 const About = () => {
   return (
@@ -9,6 +10,8 @@ const About = () => {
       <AboutHero />
       {/* Our Story Section */}
       <AboutStory />
+      {/* Values Section */}
+      <AboutValues />
     </main>
   );
 };
