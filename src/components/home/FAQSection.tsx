@@ -39,14 +39,14 @@ const faqData = [
 
 const FAQSection: React.FC = () => {
   return (
-    <section className="py-16 bg-ivory px-4 sm:px-6 lg:px-8 relative min-h-[800px]">
+    <section className="py-16 bg-light-background px-4 sm:px-6 lg:px-8 relative min-h-[800px]">
       {/* FAQ Section */}
       <div className="w-full lg:w-2/3">
         <div className="mb-4">
           <div className="relative">
             <div className="absolute left-0 top-3 h-[60px] w-[4px] bg-brown rounded-tr-full rounded-br-full"></div>
             <h2 className="text-2xl sm:text-3xl font-bold text-neutral-800 mb-4 pl-8">
-              Frequently Asked Questions
+              Frequently Asked Questions.
             </h2>
             <p className="text-lg text-neutral-600 pl-8">
               Answers to common questions about our renovation and remodeling
