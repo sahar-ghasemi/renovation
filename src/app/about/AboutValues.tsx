@@ -48,7 +48,7 @@ const AboutValues = () => (
             className="p-0 rounded-lg bg-white flex flex-row items-stretch"
           >
             {/* Left: Brown bar */}
-            <div className="w-[6px] min-w-[6px] h-full bg-brown rounded-tr-full rounded-br-full" />
+            <div className="w-[20px] min-w-[20px] h-[20px] bg-brown rounded-br-full" />
             {/* Right: Content */}
             <div className="flex-1 p-6 ">
               <div className="flex items-center mb-4">
