@@ -32,14 +32,14 @@ export default function StoneCard({ stone }: StoneCardProps) {
 
   return (
     <Link href={`/stones/${stone.id}`}>
-      <div className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer">
+      <div className="relative bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer">
         <div className="relative h-64">
           <Image
             // src={stone.image}
             src="/assets/images/back.jpg"
             alt={stone.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
+            className="object-cover"
           />
           <div className="absolute top-2 right-2 flex gap-2">
             {stone.trending && (
