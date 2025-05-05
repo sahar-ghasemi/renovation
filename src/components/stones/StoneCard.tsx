@@ -8,7 +8,8 @@ import { useState } from "react";
 interface Stone {
   id: number;
   name: string;
-  image: string;
+  defaultImage: string;
+  hoverImage: string;
   price: number;
   popularity: number;
   durability: number;
@@ -16,6 +17,7 @@ interface Stone {
   impactResistance: number;
   category: "mineral" | "porcelain";
   trending: boolean;
+  color: string;
 }
 
 interface StoneCardProps {
@@ -24,22 +26,40 @@ interface StoneCardProps {
 
 export default function StoneCard({ stone }: StoneCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleFavoriteClick = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent navigation when clicking the heart
+    e.preventDefault();
     setIsFavorite(!isFavorite);
   };
 
   return (
     <Link href={`/stones/${stone.id}`}>
-      <div className="relative bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer">
+      <div
+        className="relative bg-white rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
         <div className="relative h-64">
           <Image
-            // src={stone.image}
+            // src={stone.defaultImage}
             src="/assets/images/back.jpg"
             alt={stone.name}
             fill
-            className="object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover transition-all duration-300 ${
+              isHovered ? "opacity-0" : "opacity-100"
+            }`}
+          />
+          <Image
+            // src={stone.hoverImage}
+            src="/assets/images/kitchen12.jpg"
+            alt={`${stone.name} - hover`}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className={`object-cover transition-all duration-300 absolute top-0 left-0 ${
+              isHovered ? "opacity-100" : "opacity-0"
+            }`}
           />
           <div className="absolute top-2 right-2 flex gap-2">
             {stone.trending && (

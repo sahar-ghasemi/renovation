@@ -17,7 +17,8 @@ import StoneCard from "@/components/stones/StoneCard";
 interface Stone {
   id: number;
   name: string;
-  image: string;
+  defaultImage: string;
+  hoverImage: string;
   price: number;
   popularity: number;
   durability: number;
@@ -33,7 +34,8 @@ const stones: Stone[] = [
   {
     id: 1,
     name: "Mineral Black Galaxy",
-    image: "/assets/images/stones/black-galaxy.jpg",
+    defaultImage: "/assets/images/stones/black-galaxy.jpg",
+    hoverImage: "/assets/images/stones/black-galaxy-used.jpg",
     price: 120,
     popularity: 4.8,
     durability: 4.9,
@@ -46,7 +48,8 @@ const stones: Stone[] = [
   {
     id: 2,
     name: "Mineral Carrara",
-    image: "/assets/images/stones/carrara.jpg",
+    defaultImage: "/assets/images/stones/carrara.jpg",
+    hoverImage: "/assets/images/stones/carrara-used.jpg",
     price: 95,
     popularity: 4.6,
     durability: 4.5,
@@ -59,7 +62,8 @@ const stones: Stone[] = [
   {
     id: 3,
     name: "Mineral Bianco Romano",
-    image: "/assets/images/stones/bianco-romano.jpg",
+    defaultImage: "/assets/images/stones/bianco-romano.jpg",
+    hoverImage: "/assets/images/stones/bianco-romano-used.jpg",
     price: 110,
     popularity: 4.7,
     durability: 4.8,
@@ -72,7 +76,8 @@ const stones: Stone[] = [
   {
     id: 4,
     name: "Porcelain Nero",
-    image: "/assets/images/stones/nero-marquina.jpg",
+    defaultImage: "/assets/images/stones/nero-marquina.jpg",
+    hoverImage: "/assets/images/stones/nero-marquina-used.jpg",
     price: 130,
     popularity: 4.9,
     durability: 4.7,
@@ -85,7 +90,8 @@ const stones: Stone[] = [
   {
     id: 5,
     name: "Porcelain Calacatta",
-    image: "/assets/images/stones/santa-cecilia.jpg",
+    defaultImage: "/assets/images/stones/santa-cecilia.jpg",
+    hoverImage: "/assets/images/stones/santa-cecilia-used.jpg",
     price: 105,
     popularity: 4.5,
     durability: 4.6,
