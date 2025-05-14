@@ -193,23 +193,8 @@ export default function StonesPage() {
   }, [searchQuery, selectedFilter, selectedCategory]);
 
   return (
-    <div className="min-h-screen bg-light-background py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-light-background  px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="bg-beige py-4 px-6 rounded-tr-[200px] rounded-sm mb-10">
-          <div>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-[4px] h-12 bg-brown rounded-tr-full rounded-br-full"></div>
-              <h1 className="text-4xl font-bold text-neutral-800">
-                Stone Collection.
-              </h1>
-            </div>
-            <p className="text-lg text-neutral-600 ml-5">
-              Discover our premium selection of natural stones
-            </p>
-          </div>
-        </div>
-
         {/* Search and Filter Bar */}
         <div className="flex flex-col sm:flex-row gap-4 mb-8">
           <div className="relative flex-1">
