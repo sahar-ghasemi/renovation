@@ -28,7 +28,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="bg-light-background pb-30">
+    <section className="bg-light-background ">
       <div className="w-full max-w-7xl xl:max-w-none mx-auto px-4">
         <div className="flex items-center mb-12">
           <motion.h2

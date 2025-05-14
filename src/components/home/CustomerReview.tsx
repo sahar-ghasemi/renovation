@@ -62,7 +62,7 @@ export default function CustomerReview() {
   const swiperRef = useRef<SwiperType | undefined>(undefined);
 
   return (
-    <section className="w-full bg-light-background py-8 sm:py-12 md:py-16">
+    <section className="w-full  py-8 sm:py-12 md:py-16">
       <div className="max-w-[90%] sm:max-w-[92%] md:max-w-[94%] lg:max-w-[96%] 2xl:max-w-[98%] mx-auto px-2 sm:px-3 md:px-4">
         <div className="flex items-center justify-between mb-8 sm:mb-12 relative">
           <div className="absolute left-0 top-0 bottom-0 w-1 bg-brown rounded-tr-full rounded-br-full"></div>

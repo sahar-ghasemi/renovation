@@ -5,6 +5,7 @@ import {
   CustomerReview,
   Services,
   ProjectGallery,
+  KitchenFacelift,
 } from "@/components/home";
 import DiscountSection from "@/components/home/DiscountSection";
 
@@ -15,6 +16,7 @@ export default function Home() {
       <Services />
       <ProjectGallery />
       <EstimatorSection />
+      <KitchenFacelift />
       <CustomerReview />
       <FAQSection />
       <DiscountSection />

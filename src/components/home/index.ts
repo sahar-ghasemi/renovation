@@ -4,3 +4,4 @@ export { default as EstimatorSection } from "./EstimatorSection";
 export { default as FAQSection } from "./FAQSection";
 export { default as CustomerReview } from "./CustomerReview";
 export { default as ProjectGallery } from "./ProjectGallery";
+export { default as KitchenFacelift } from "./KitchenFacelift";
