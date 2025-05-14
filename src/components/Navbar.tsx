@@ -10,7 +10,6 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Stones", href: "/stones" },
-  { label: "Pricing", href: "/pricing" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -56,13 +55,13 @@ const Navbar = () => {
           })}
         </ul>
 
-        <div className="w-[180px]">
+        <div className="w-[230px]">
           <button
             className="group relative inline-block overflow-hidden rounded-2xl rounded-tr-[60px] bg-brown
            text-sm font-semibold text-white px-5 py-3 transition-all duration-300 w-auto"
           >
             <span className="inline-block transition-all duration-300 group-hover:pr-4">
-              Start Estimating
+              Book Free Consultation
             </span>
             <ArrowRight
               className="absolute right-1 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100

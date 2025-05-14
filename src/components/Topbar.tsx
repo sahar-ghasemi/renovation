@@ -1,5 +1,5 @@
 "use client";
-import { Phone, Instagram, Gem } from "lucide-react";
+import { Phone, Gem } from "lucide-react";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -16,7 +16,7 @@ const Topbar = () => {
 
   const iconStyle = "w-5 h-5 text-ivory";
   const letters = Array.from(
-    " You can easily cover your stone costs from our stone menu!"
+    " Professional Stone Consultation - Free of Charge! Expert advice for your perfect stone selection."
   );
   return (
     <div
@@ -61,13 +61,11 @@ const Topbar = () => {
         <motion.a
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
-          href="https://www.instagram.com/your_instagram"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="tel:+61461575388"
           className="flex items-center gap-1 cursor-pointer"
         >
-          <Instagram className={iconStyle} />
-          <span className="text-ivory hidden sm:inline">Instagram</span>
+          <Phone className={iconStyle} />
+          <span className="text-ivory hidden sm:inline">+61 461 575 388</span>
         </motion.a>
 
         <motion.a
