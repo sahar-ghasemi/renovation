@@ -77,10 +77,18 @@ export async function generateMetadata({
   if (!fs.existsSync(filePath)) return {};
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { data } = matter(fileContent);
+
   return {
     title: data.title,
     description: data.summary,
     openGraph: {
+      title: data.title,
+      description: data.summary,
+      images: [data.image],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
       title: data.title,
       description: data.summary,
       images: [data.image],
