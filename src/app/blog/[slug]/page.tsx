@@ -67,3 +67,23 @@ export default async function BlogPostPage({
     </div>
   );
 }
+//for seo
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const filePath = path.join(BLOG_DIR, `${params.slug}.md`);
+  if (!fs.existsSync(filePath)) return {};
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data } = matter(fileContent);
+  return {
+    title: data.title,
+    description: data.summary,
+    openGraph: {
+      title: data.title,
+      description: data.summary,
+      images: [data.image],
+    },
+  };
+}
